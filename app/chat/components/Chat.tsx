@@ -50,7 +50,7 @@ const AIChatComponent = (props: ChatProps) => {
                   {message.role === "assistant" && (
                     <Avatar>
                       <AvatarFallback>MB</AvatarFallback>
-                      <AvatarImage src="https://avatars.githubusercontent.com/u/10850412?v=4" />
+                      <AvatarImage src="https://static.vecteezy.com/ti/vetor-gratis/p1/4476066-isolado-macho-bigode-design-gratis-vetor.jpg" />
                     </Avatar>
                   )}
                   <p className="leading-relaxed">
