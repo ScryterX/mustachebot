@@ -18,11 +18,13 @@ import { ScrollArea } from "@/app/_components/ui/scroll-area";
 import { useChat } from "ai/react";
 import { SendIcon } from "lucide-react";
 import { useSession } from "next-auth/react";
+
 interface ChatProps {}
 
 const AIChatComponent = (props: ChatProps) => {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
   const { data } = useSession();
+
   return (
     <div>
       <Card className="w-[440px] grid-rows-[min-content_1fr_min-content]">
@@ -47,7 +49,7 @@ const AIChatComponent = (props: ChatProps) => {
 
                   {message.role === "assistant" && (
                     <Avatar>
-                      <AvatarFallback>US</AvatarFallback>
+                      <AvatarFallback>MB</AvatarFallback>
                       <AvatarImage src="https://avatars.githubusercontent.com/u/10850412?v=4" />
                     </Avatar>
                   )}
