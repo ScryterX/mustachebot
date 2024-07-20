@@ -56,7 +56,7 @@ const AIChatComponent = (props: ChatProps) => {
                   <p className="leading-relaxed">
                     <span className="block font-bold text-slate-700">
                       {message.role === "user"
-                        ? data?.user?.name
+                        ? (data?.user?.name ?? "Usuário")
                         : "Mustachebot"}
                     </span>
                     {message.content}
