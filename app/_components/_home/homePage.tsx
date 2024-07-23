@@ -4,12 +4,18 @@ import LoginCard from "@/app/_components/_home/loginCard";
 
 const HomePage = () => {
   return (
-    <div className="flex min-h-screen">
-      <div className="relative flex-1">
-        <Slideshow />
-      </div>
-      <div className="flex flex-1 items-center justify-center">
+    <div className="relative min-h-screen">
+      <Slideshow />
+      <div className="absolute inset-0 flex items-center justify-center p-4 md:hidden">
         <LoginCard />
+      </div>
+      <div className="hidden min-h-screen md:flex">
+        <div className="relative flex-1">
+          <Slideshow />
+        </div>
+        <div className="flex flex-1 items-center justify-center p-4">
+          <LoginCard />
+        </div>
       </div>
     </div>
   );

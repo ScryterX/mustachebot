@@ -17,48 +17,27 @@ const Slideshow = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Muda de slide a cada 3 segundos
+    }, 5000); // Muda de slide a cada 5 segundos
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="slideshow-container">
+    <div className="relative h-screen w-full overflow-hidden md:h-full">
       {images.map((src, index) => (
         <div
           key={index}
-          className={`slide ${index === currentIndex ? "active" : ""}`}
+          className={`absolute left-0 top-0 h-full w-full transition-opacity duration-1000 ease-in-out ${index === currentIndex ? "opacity-100" : "opacity-0"}`}
         >
           <Image
             src={src}
             alt={`Slide ${index + 1}`}
             layout="fill"
             objectFit="cover"
+            className="h-full w-full"
           />
         </div>
       ))}
-      <style jsx>{`
-        .slideshow-container {
-          position: relative;
-          width: 100%;
-          height: 100vh; /* Ajuste a altura conforme necessário */
-          overflow: hidden;
-        }
-
-        .slide {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          opacity: 0;
-          transition: opacity 1s ease-in-out;
-        }
-
-        .slide.active {
-          opacity: 1;
-        }
-      `}</style>
     </div>
   );
 };
