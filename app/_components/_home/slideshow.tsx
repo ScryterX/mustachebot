@@ -32,9 +32,8 @@ const Slideshow = () => {
           <Image
             src={src}
             alt={`Slide ${index + 1}`}
-            layout="fill"
-            objectFit="cover"
-            className="h-full w-full"
+            fill
+            className="h-full w-full object-cover"
           />
         </div>
       ))}

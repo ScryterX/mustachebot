@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Slideshow from "@/app/_components/_home/slideshow";
 import LoginCard from "@/app/_components/_home/loginCard";
